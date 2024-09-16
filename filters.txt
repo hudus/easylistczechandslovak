@@ -12,7 +12,6 @@
 !
 ! ---------- Czech & Slovak generic blocking rules ---------- !
 !
--reklama.
 .com/bannery/
 .cz/ads/
 .cz/BAN/
@@ -21,6 +20,7 @@
 .cz/img/banner
 .etargetnet.
 .sk/img/banner
+/amalker/pos/mag_ads.js
 /cron.php?rand=
 /emonitor.
 /komercni-sdeleni/*
@@ -70,11 +70,18 @@
 ||krimi-plzen.cz/media/partners/
 ||kurzy.cz/e/adv?
 ||img.kurzy.cz/og
+||kurzy.cz/l/s_back.js
+||img.kurzy.cz/block/
+kurzy.cz#$#cookie-remover /ab_1/;
+kurzy.cz#$#abort-on-property-write s_back
+@@img.kurzy.cz/ban/ad_ads_advert_advertisement_adform_pub_300x250.png
 ||lamer.cz/images/bg*.jpg
+||letemsvetemapplem.eu/*/alzafeed_cached_js.php
 ||libise.eu/r/
 ||liveagent.mobilbonus.cz^
 ||lphard.cz/images/banners/
 ||mamincinyrecepty.cz/images/banner
+||mediatn.cms.nova.cz/robots.txt$xhr
 ||motorkari.cz^$subdocument
 ||mrk.cz/images/inz/
 ||parabola.cz/img_menu/*_01.$image
@@ -84,6 +91,7 @@
 ||reklama.warforum.cz^
 ||report.seznamzpravy.cz^
 ||report.sport.cz^
+||rfapi.digicon.cz/img/listovacky-cross/enigmaplus.cz.js$script
 ||romea.cz/images/servis/banner
 ||ronnie.cz/cache/bannery/
 ||sbazar.cz/*/v1/xhr
@@ -98,19 +106,24 @@
 ||videoad.cz^
 ||warforum.cz/ads/$image
 ||wesa.cz/banner/
+||*/wp-content/plugins/wp-content-copy-protection/assets/js/script.min.js$domain=rozbor-dila.cz|rozbor-dila.eu|rozborknihy.cz|studijni-svet.cz|ekonomie-ucetnictvi.cz|biologie-chemie.cz|anglictina-maturita.cz
+||*/wp-content/plugins/wp-content-copy-protection/assets/css/style.min.css$domain=rozbor-dila.cz|rozbor-dila.eu|rozborknihy.cz|studijni-svet.cz|ekonomie-ucetnictvi.cz|biologie-chemie.cz|anglictina-maturita.cz
 ||zkouknito.cz/js/js.htmlad.js
 ||zvukarina.cz/forum/images/ostatni/
 !
 ! ---------- Slovak 1st party blocking rules ---------- !
 !
+||0af2a962b0102942d9a7df351b20be55.com^
 ||adb.azet.sk^
 ||api-exponea.o2.sk^
 ||autobazar.eu/__branding/
 ||bannersector.sector.sk^
 ||bmwklub.sk/images/banners/
+||eduself.sk/public/js/prebid-ads.js$script,important
 ||flirtkontakt.sk/previews/banner*.jpg
 ||fony.sk/content/banners/
 ||fundingchoicesmessages.google.com$domain=hnonline.sk
+||funnyburger.sk/js/anti-theft-system.js$script
 ||hojko.com/images/banner*.gif
 ||image.sector.sk^
 ||img.zoznam.sk/adimages/
@@ -122,6 +135,8 @@
 ||ourphorum.com/images/banner
 ||pricemania.sk/pictures/banners/
 ||pricemania.sk/pictures/campaigns/
+||radia.sk/_uputavky/$subdocument
+||radia.sk/scripts/ads.js
 ||recycle.zoznam.sk/get.fcgi
 ||recycle-static.zoznam.sk/*.mp4
 ||rtvs.sk/bs/xml/vast.xml
@@ -129,6 +144,7 @@
 ||sector.sk/a/
 ||serialy.io/theme/json/episode.ad.etarget.php
 ||ta3.com/api/v1/livebox/video/
+||waaw.*/js/script_33.10.js?16$script
 ||zn.sk/galeria/
 !
 ! ---------- Czech 3rd party blocking rules ---------- !
@@ -211,6 +227,8 @@
 ||productads.sk^$third-party
 ||recycle-static.zoznam.sk^$third-party
 ||robene.sk^$third-party
+||storage.googleapis.com/tivio-production.appspot.com/ads/$third-party
+||ticketportal.sk/carousels^$third-party
 ||turbo.web2media.sk$third-party
 ||zachej.sk^$third-party
 !
@@ -221,6 +239,7 @@
 @@||decko.ceskatelevize.cz/cms/layouts/js/analytics.js$script,domain=decko.ceskatelevize.cz
 @@||heureka.*/crossdomain.xml
 @@||heureka.*/direct/vyvoj-cen/
+@@||heureka.*/ocm/sdk.js
 @@||iboys.cz/advert-list.php
 @@||netusers.cz/js/$script,domain=titulky.com
 @@||opti.cz/wp-content/uploads/*/reklama_*.jpg$image
@@ -238,6 +257,7 @@
 !
 denik.cz#@#.ads-box
 denik.cz#@#.reklama-box
+hyundai.com#@#.r-main
 jaguar-club.net,mazdaclub.cz,nissanclub.cz#@#.reklama
 novinky.cz#@#.g_ad
 www.parabola.cz#@#.rklm
@@ -254,9 +274,11 @@ sluzebnik.cz#@##adverts
 !
 aktuality.sk#@#.adBanner
 dobre-recepty.sk#@##ad_skin
+vranovske.sk#@#.advertising-content
 !
 ! ---------- Czech and Slovak Generic element hiding rules ---------- !
 !
+###ad_popup
 ###adRectangle
 ##[id^="etarget"]
 ###onlajny-stickers
@@ -274,6 +296,11 @@ dobre-recepty.sk#@##ad_skin
 ##.etarget
 ##.hp-advert
 ##.jobscz
+##.lsads-banner
+##.nativead
+##.ownad
+##.perex-adblock-warning
+##.r-main
 ##.reklama-3
 ##.reklama-bottom
 ##.reklama-box
@@ -301,6 +328,7 @@ dobre-recepty.sk#@##ad_skin
 ! ---------- Czech Site Specific Element hiding rules ---------- !
 !
 365tipu.cz##.wpa.top
+aktualne.cz##[class^="advert__"]
 appliste.cz##.banner-header
 autobazar.cz###biglink
 autoforum.cz###content-right > div[style]:first-of-type
@@ -326,7 +354,7 @@ cnews.cz##div#td-outer-wrap > div.td-container
 cnn.iprima.cz##.mone_box
 computerworld.cz##.ad-obal
 csfd.cz,csfd.sk##.box-banner
-databazeknih.cz##.r-main
+databazeknih.cz##div[id^="ad_"]
 denik.cz##div[class^="reklama"]
 diit.cz,cdr.cz###pr-prace-blok-view
 diit.cz,cdr.cz##div[class*="openx-async"]
@@ -345,6 +373,9 @@ edna.cz##.leaderboard
 edna.cz##.skyscraper
 edna.cz##.banner
 emimino.cz###r-leaderboardhp
+enigmaplus.cz##div[id^="cross"]
+epochaplus.cz##.rf-branding
+epochaplus.cz##div[class^="cross"]
 esemes.cz###fancybox-overlay
 esemes.cz###h_part_right
 esemes.cz,warforum.cz###t-content
@@ -378,7 +409,6 @@ heureka.cz,heureka.sk##div[class$="advert"]
 hrej.cz##[class*="sda-"]
 hybrid.cz##.TopFullBanner
 idnes.cz##div[id^="hyper"]
-idnes.cz##[class*="r-main"]
 idos.idnes.cz##div.advert-leader-board-container
 in-pocasi.cz##.banner
 info.cz##.gallery-advertisement
@@ -388,13 +418,13 @@ itnetwork.cz##.reklama-background
 jaknaletenky.cz###social
 kaloricketabulky.cz##.bannLead
 kamsdetmi.com##div.banner_position
+kinobox.cz##div[class*="Commercial_container"]
 kladenskelisty.cz##.rleft
 kladenskelisty.cz##.rright
 kladenskelisty.cz##.tree
 kniha.cz##div[id^="banner"]
 konzolista.cz##.ad
 konzolista.cz##.v-card.mb-6
-konzolista.cz#?#.v-card--link:-abp-has(.ad)
 krimi-plzen.cz##a[rel="sponsored"]
 krimi-plzen.cz##[class*="partnеr"]
 kupi.cz##.top_background
@@ -404,12 +434,7 @@ kurzy.cz###zr300x600
 kurzy.cz##iframe[src^="https://img.kurzy.cz/og"]
 kurzy.cz##a[href*="utm_campaign=kurzy_"]
 lamer.cz,moda.cz##.square
-letemsvetemapplem.eu###branding_conts
-letemsvetemapplem.eu##.headerbanner
-letemsvetemapplem.eu###floatad
-letemsvetemapplem.eu###headertopbanner
 libise.eu###aa1
-lidovky.cz##[class*="r-main"]
 lidovky.cz##div[id^="hyper"]
 mall.tv##.product-ad-wrapper
 mall.tv##.sqaure-mobile-ad
@@ -422,24 +447,24 @@ medop.cz###block-nodesinblock-0
 menicka.cz##.header_banner
 meteoprog.cz##div[id^="mp_banner_"]
 mladypodnikatel.cz##.scroll_banner
-modnipeklo.cz##[class*="r-main"]
-motorkari.cz#?#div:-abp-has(> a[href*="?act=detail&f=8"])
 motorkari.cz##a[trgurl],a[href*="relocate.php"]
 motorkari.cz##.banner,.left-side-banner,.right-side-banner
 mrk.cz##.komerce
 nasepenize.cz##.box-offer
 nasepraha.cz##.npab
+navratdoreality.cz##.box-responsive
 onlajny.com###banner-left-pane
 onlajny.com###banner-top-four
 onlajny.com###sportObchodBanner
 onlajny.com##div.bannerHolderZapasRight
 onlymen.cz##pp
 osel.cz##.right
-parabola.cz#?#h3:-abp-contains(/^Reklama$/)
 parabola.cz##div[style^="float:left;width:468px;"] + img[src^="data:image/gif;base64,"]
 pctuning.cz##[class*="sda-"]
 pravidla.cz##.advtick
 pravopisne.cz,pravopisne.sk##.advert
+prehrajto.cz##.ad-leaderboard-alt-wrapper
+prehrajto.cz###ad-leaderboard-alt-sides
 primat.cz##a[class^="levakolejroku"]
 primat.cz##a[class^="pravakolejroku"]
 programujte.com###branding_anchor_left
@@ -452,6 +477,7 @@ ronnie.cz###fixedMenu
 ronnie.cz###rek3
 ronnie.cz###rodkaz
 rouming.cz##.roumingLista
+rozbor-dila.cz,rozbor-dila.eu,rozborknihy.cz,studijni-svet.cz,ekonomie-ucetnictvi.cz,biologie-chemie.cz,anglictina-maturita.cz##.ai_widget
 sauto.cz###pvMid
 serialycz.cz##a[href^="https://prehrajto.cz/?cc=prlbmso2"]
 serialzone.cz##.banner-header
@@ -492,7 +518,6 @@ webshare.cz##[class^="ws-banner-"]
 webtrh.cz##.banner
 www.seznam.cz##div.ogm-sticky-repeater
 www.seznam.cz##div.ad-exclusive
-www.seznam.cz#?#div.dragging-enabled:-abp-has(div.gadget--reklama)
 zakonyprolidi.cz##.SkyLeft.Banner
 zena-in.cz##div.main-top
 zena-in.cz##div.site-reklama
@@ -504,21 +529,35 @@ netconcert.cz##[class*="advertisement"]
 ! ---------- Slovak Site Specific Element Hiding Rules ---------- !
 !
 autobazar.eu##.bannero2
+autozurnal.com###modal-container
+autozurnal.com##.modal-backdrop
+autozurnal.com##div[id^="branding"]
 behame.sk##div[class^="banner_box"]
 best4you.sk##a[href="http://www.Onlinefilmy.eu"]
 best4you.sk##a[href="http://www.movieportal.eu"]
 best4you.sk##div[style="font-size:20px; font-family:Arial Black, Arial; color:#FF0000; font-weight:bold"]
 bmwklub.sk##div[id^="ad"]
+bombuj.si,serialy.bombuj.si##div[id*="casino"]
+bombuj.si,serialy.bombuj.si##div[id*="banner"]
+bombuj.si,serialy.bombuj.si##a[id*="popup2"]
+brainee.hnonline.sk##.container--break-branding
+brainee.hnonline.sk##.container--ticketportal
+brainee.hnonline.sk##.item__ad-center
+brainee.hnonline.sk##.item--socials
 cas.sk##div[class*="pohodoWidget"]
 cas.sk##a.predpredaj-black
 centrum.sk##.banner
 centrum.sk##.h2.grad2.kupons_games
+cp.sk##.advert
+cp.sk##.banner
 dsl.sk##.header_info_text
 feminity.zoznam.sk##div[class*="pohodoWidget"]
 hnonline.sk##[id^="banner-"]
 hnonline.sk##.s-branding
 hnonline.sk##stripemark
 hnonline.sk##div[style*="Roboto"][style*="fixed"]
+kosicednes.sk##header > div
+kosicednes.sk##.newsletter
 michalovskespravy.sk###footer
 michalovskespravy.sk###headerSlideContent1
 michalovskespravy.sk###ocko
@@ -528,12 +567,17 @@ mtbiker.sk##a[href*="trackBannerAd"]
 najserialy.to##.overlay
 najserialy.to##a[class^="tv-"]
 pokec.azet.sk##.c_banner300x300
+pppeter.shop##.modal-backdrop
+pppeter.shop##.modal
+pravda.sk##.advert
+presovak.sk###push_promt
+presovak.sk##.modal-backdrop
 pretaktovanie.zoznam.sk##.post.bg5
 sector.sk,kinema.sk##[id^="back"][onclick]
 sector.sk##iframe[data-src^="/default-ad"]
 serialy.io##div[id][style="position: absolute; top: 0; left: 0; width: 100%; height: 380px; text-align: center;"]
 sktorrent.eu##div[style*="position:absolute;"]
-slovnik.aktuality.sk##.desktop-wrapper:has([id^="div-gpt-ad"])
+sme.sk##.artemis-ad-position
 topky.sk###top-offers-slider
 topky.sk##.ad
 topky.sk##.addbox.avizo
@@ -545,6 +589,8 @@ tvtv.sk##.ad
 tv-program.sk##.dragobj > div:nth-of-type(2)
 tv-program.sk##.stn.stns > a[target="_blank"]
 tv-program.sk##.stn.stnu > a[target="_blank"]
+ubian.sk##.connection-results-ad
+vtn-vranov.sk##div[id^="advert_"]
 vranovske.sk##div[class^="item h2"]
 vranovske.sk##div[class="advertisement-list-component"]
 zmeskanyhovor.com##.native-ads
@@ -552,12 +598,26 @@ zoznam.sk##a[href^="https://boxu.sk"]
 !
 ! ---------- ABP Extended filters ---------- !
 !
+brainee.hnonline.sk#?#.container--break:-abp-has(.ad--align)
+brainee.hnonline.sk#?#div[class^="position_"]:-abp-has(.ad--align)
 csfd.cz#?#.widget-group-2 li:-abp-has(div.ad-pmg)
 csfd.cz#?#.ct-related:-abp-contains(/^\s+Reklama/)
 doktorka.cz#?#.block-imageblock:-abp-contains(Reklama)
 dotekomanie.cz#?#div.box:-abp-contains(/^reklama/i)
+enigmaplus.cz,epochaplus.cz#?#.text-center:-abp-has(>span:-abp-contains(reklama))
+enigmaplus.cz,epochaplus.cz#?#div:-abp-has(>a[class^="glightbox"])
+enigmaplus.cz,epochaplus.cz#?#span:-abp-contains(reklama)
+konzolista.cz#?#.v-card--link:-abp-has(.ad)
 lupa.cz,root.cz#?#div.article--content:-abp-has(div.design-advert)
+motorkari.cz#?#div:-abp-has(> a[href*="?act=detail&f=8"])
+msmt.cz#?#.bcc:-abp-has(.banners)
+parabola.cz#?#h3:-abp-contains(/^Reklama$/)
+presovak.sk#?#.wrapper__list__article:-abp-has(.widget__form-subscribe)
+slovnik.aktuality.sk#?#.desktop-wrapper:-abp-has([id^="div-gpt-ad"])
+sports24.cz#?#.tdc-row:not(:-abp-has(>.tdc-element-style))
 tvtv.sk#?#.content-item:-abp-has(.header a[href^="/reklama/"])
+vtn-vranov.sk#?#.widget:-abp-has(img[src*="/ads/"])
+www.seznam.cz#?#div.dragging-enabled:-abp-has(div.gadget--reklama)
 !
 ! ---------- uBlock Extended filters ---------- !
 !
